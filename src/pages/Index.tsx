@@ -1,13 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import HeroSection from "@/components/HeroSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import VideoCardsSection from "@/components/VideoCardsSection";
+import AboutSection from "@/components/AboutSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import LeadCaptureForm from "@/components/LeadCaptureForm";
+import Footer from "@/components/Footer";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Index = () => {
+  useEffect(() => {
+    // Initialize smooth scrolling and GSAP settings
+    gsap.config({ force3D: true });
+    
+    // Refresh ScrollTrigger on load
+    ScrollTrigger.refresh();
+
+    return () => {
+      // Cleanup on unmount
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen">
+      <HeroSection />
+      <BenefitsSection />
+      <VideoCardsSection />
+      <AboutSection />
+      <TestimonialsSection />
+      <LeadCaptureForm />
+      <Footer />
+    </main>
   );
 };
 
