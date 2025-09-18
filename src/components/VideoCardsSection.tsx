@@ -8,22 +8,22 @@ const videoCards = [
   {
     title: "Histórias de Resgate",
     description: "Compartilhe emocionantes relatos de salvamento e transformação de vidas através do amor aos animais.",
-    imageSrc: "/imgs/1.png"
+    imageSrc: "/imgs/papagaio1.png"
   },
   {
     title: "Momentos Especiais",
     description: "Capture e eternize os momentos mais marcantes e divertidos ao lado do seu companheiro de quatro patas.",
-    imageSrc: "/imgs/3.png"
+    imageSrc: "/imgs/dog1.png"
   },
   {
     title: "Lições de Vida",
     description: "Descubra como os pets nos ensinam sobre amor, lealdade, perseverança e felicidade genuína.",
-    imageSrc: "/imgs/2.png"
+    imageSrc: "/imgs/beta.png"
   },
   {
     title: "Conexões Únicas",
     description: "Explore o vínculo extraordinário entre humanos e animais que transcende palavras e barreiras.",
-    imageSrc: "/imgs/4.png"
+    imageSrc: "/imgs/cat.png"
   }
 ];
 
@@ -37,30 +37,30 @@ const CombinedSections: React.FC = () => {
 
     if (!section || !cards.length) return;
 
-    // Staggered animation for cards
+    // Animação stagger para os cards
     gsap.fromTo(
       cards,
-      { opacity: 0, y: 40 },
+      { opacity: 0, y: 30 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: section,
-          start: "top 80%",
+          start: "top 85%",
           end: "bottom 20%",
           toggleActions: "play none none reverse"
         }
       }
     );
 
-    // Individual hover animations
+    // Animações individuais de hover
     cards.forEach((card) => {
       card.addEventListener('mouseenter', () => {
         gsap.to(card, {
-          y: -8,
+          y: -6,
           scale: 1.02,
           duration: 0.3,
           ease: "power2.out"
@@ -88,28 +88,23 @@ const CombinedSections: React.FC = () => {
 
   return (
     <>
-      {/* Growing Company Section */}
-      <section className="relative pt-8 pb-12 bg-blueGray-50">
+      {/* Seção Growing Company - Com adaptação da imagem */}
+      <section className="relative pt-8 pb-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center">
-            {/* Video Section */}
+            {/* Seção da Imagem - Adaptada ao tamanho natural da imagem */}
             <div className="w-full md:w-5/12 mb-6 md:mb-0 px-4">
-              <div className="relative w-full aspect-video rounded-lg shadow-lg overflow-hidden">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  className="w-full h-full object-cover"
-                >
-                  <source src="/video/vet.mp4" type="video/mp4" />
-                  Seu navegador não suporta vídeos em HTML5.
-                </video>
+              <div className="relative w-full rounded-lg shadow-lg overflow-hidden">
+                <img
+                  src="/imgs/img7.jpg"
+                  alt="Histórias de pets"
+                  loading="lazy"
+                  className="w-full h-auto object-contain max-w-full"
+                />
               </div>
             </div>
 
-            {/* Content Section */}
+            {/* Seção de Conteúdo */}
             <div className="w-full md:w-7/12 px-4">
               <div className="md:pr-8">
                 <div
@@ -121,7 +116,7 @@ const CombinedSections: React.FC = () => {
                 <h3 className="text-2xl md:text-3xl font-semibold" style={{ color: "#1a87b5" }}>
                   Histórias que Conectam
                 </h3>
-                <p className="mt-4 text-base md:text-lg leading-relaxed text-blueGray-500">
+                <p className="mt-4 text-base md:text-lg leading-relaxed text-gray-500">
                   Transforme sua experiência prática em uma obra literária inspiradora, mostrando sua paixão e dedicação aos cuidados com pets.
                 </p>
                 <ul className="list-none mt-6">
@@ -137,7 +132,7 @@ const CombinedSections: React.FC = () => {
                         <h4 className="text-base font-semibold text-[#da4925]">
                           Autoridade e Inspiração
                         </h4>
-                        <p className="text-sm md:text-base text-blueGray-500">
+                        <p className="text-sm md:text-base text-gray-500">
                           Mostre ao mercado que além de cuidar, você também inspira. Sua história real se torna referência para colegas e clientes.
                         </p>
                       </div>
@@ -155,7 +150,7 @@ const CombinedSections: React.FC = () => {
                         <h4 className="text-base font-semibold text-[#da4925]">
                           Conexão com a Comunidade
                         </h4>
-                        <p className="text-sm md:text-base text-blueGray-500">
+                        <p className="text-sm md:text-base text-gray-500">
                           Compartilhe sua jornada e crie vínculos com outros profissionais que também fazem a diferença no bem-estar animal.
                         </p>
                       </div>
@@ -173,7 +168,7 @@ const CombinedSections: React.FC = () => {
                         <h4 className="text-base font-semibold text-[#da4925]">
                           Legado Profissional
                         </h4>
-                        <p className="text-sm md:text-base text-blueGray-500">
+                        <p className="text-sm md:text-base text-gray-500">
                           Deixe registrada a sua experiência de vida e de carreira em um livro que eterniza o amor e a responsabilidade pelos animais.
                         </p>
                       </div>
@@ -186,7 +181,7 @@ const CombinedSections: React.FC = () => {
         </div>
       </section>
 
-      {/* Image Cards Section */}
+      {/* Seção de Cards de Imagem */}
       <section ref={sectionRef} className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-12">
@@ -231,14 +226,14 @@ const CombinedSections: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-6 bg-blueGray-50">
+      <footer className="py-6 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <p className="text-sm md:text-base text-blueGray-500 font-semibold">
+            <p className="text-sm md:text-base text-gray-500 font-semibold">
               Aproveite,{" "}
               <a
                 href="#"
-                className="text-blueGray-500 hover:text-blueGray-800"
+                className="text-gray-500 hover:text-gray-800"
                 target="_blank"
                 rel="noopener noreferrer"
               >

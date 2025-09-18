@@ -100,17 +100,17 @@ const HeroSection = () => {
       {/* Vídeo de fundo */}
       <div className="absolute inset-0 w-full h-full z-0">
         <video
-          ref={videoRef}
-          data-src="/video/dog.mp4"
-          muted
-          loop
-          playsInline
-          autoPlay
-          className="w-full h-full object-cover sm:object-cover object-center max-w-[100vw] max-h-[100vh]"
-          style={{ filter: "brightness(0.7)" }}
-        >
-          <source type="video/mp4" />
-        </video>
+  ref={videoRef}
+  muted
+  loop
+  autoPlay
+  playsInline
+  preload="metadata"   // 👈 leve
+  poster="/video/dog-poster.jpg"
+  className="w-full h-full object-cover"
+>
+  <source src="/video/dog1.mp4" type="video/mp4" />
+</video>
 
         {/* Overlay */}
         <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-brand-blue-intense/30 via-brand-blue-soft/20 to-transparent z-10"></div>

@@ -163,7 +163,7 @@ const AboutSection = () => {
           <div ref={imageRef} className="order-1 lg:order-2 flex justify-center">
             <div className="relative sm:transform sm:rotate-3 sm:hover:rotate-0 transition-transform duration-500 shadow-md sm:shadow-lg rounded-lg sm:rounded-xl overflow-hidden max-w-[14rem] sm:max-w-[16rem] md:max-w-[18rem] lg:max-w-[20rem]">
               <img
-                src="/imgs/frontallivro.png"
+                src="/imgs/frontabook.png"
                 alt="Capa do Livro sobre Pets"
                 className="w-full h-auto object-cover rounded-lg sm:rounded-xl"
                 loading="lazy"
